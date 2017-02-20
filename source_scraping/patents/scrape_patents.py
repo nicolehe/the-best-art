@@ -32,7 +32,9 @@ def get_title(url, page):
         for child in contents:
             if child.name == "td":
                 if contents.index(child) == 6:
-                    result = child.text.strip()
+                    result = child.text
+                    result = result.replace("\n", "")
+                    result = " ".join(result.split())
                     titles.append(result)
                     print result
 
@@ -41,13 +43,15 @@ def create_json():
     final_obj[search_term] = titles
     final_obj["description"] = "US patents that contain the word " + search_term
     filename = search_term + "_patents.json"
-    with open(filename, 'w') as fp:
-        json.dump(final_obj, fp)
-    print "saved to " + filename
+
+    with open(filename, 'wt') as out:
+        json.dump(final_obj, out, sort_keys=True, indent=4, separators=(',', ': '))
+
+    print "************* saved to " + filename + " *************"
 
 
 total_pages = get_pages(base_url, 1)
-print total_pages
+print "************* " + str(total_pages) + " pages total *************"
 
 for page in range(1, total_pages):
     get_title(base_url, page)
