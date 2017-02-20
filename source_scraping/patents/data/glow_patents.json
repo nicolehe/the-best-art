@@ -1,6 +1,6 @@
 {
     "description": "US patents that contain the word glow",
-    "glow": [
+    "data": [
         "Method for detecting a glow plug replacement",
         "Pressure measuring glow plug",
         "Means of introducing an analyte into liquid sampling atmospheric pressure glow discharge",

@@ -1,6 +1,6 @@
 {
     "description": "US patents that contain the word rainbows",
-    "rainbows": [
+    "data": [
         "Apparatus for producing and viewing rainbows",
         "Optical instrument for producing artificial rainbows",
         "Method and apparatus for illumination of a liquid droplet fountain to produce rainbows",
