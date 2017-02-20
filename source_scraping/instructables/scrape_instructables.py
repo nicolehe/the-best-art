@@ -18,7 +18,7 @@ def get_title(url, offset):
     soup = BeautifulSoup(html, "html.parser")
     titles = soup.select("span.title")
     for title in titles:
-        results.append(title.text)
+        results.append(title.text.encode("utf-8"))
 
 def create_json():
     final_obj["description"] = "titles from instructables"
