@@ -20,7 +20,7 @@ def get_pages(url, page):
     split = text.split(" ")
     total_entries = int(split[-1].strip())
     pages = total_entries / 50
-    return pages
+    return pages + 1
 
 
 def get_title(url, page):
@@ -53,8 +53,11 @@ def create_json():
 total_pages = get_pages(base_url, 1)
 print "************* " + str(total_pages) + " pages total *************"
 
-for page in range(1, total_pages):
-    get_title(base_url, page)
-    time.sleep(0.5)
-
-create_json()
+if total_pages != 0:
+    if total_pages == 1:
+        get_title(base_url, 1)
+    else:
+        for page in range(1, total_pages):
+            get_title(base_url, page)
+            time.sleep(0.5)
+    create_json()
