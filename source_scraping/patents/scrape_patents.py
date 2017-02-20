@@ -42,7 +42,7 @@ def get_title(url, page):
 def create_json():
     final_obj[search_term] = titles
     final_obj["description"] = "US patents that contain the word " + search_term
-    filename = search_term + "_patents.json"
+    filename = "./data/" + search_term + "_patents.json"
 
     with open(filename, 'wt') as out:
         json.dump(final_obj, out, sort_keys=True, indent=4, separators=(',', ': '))
