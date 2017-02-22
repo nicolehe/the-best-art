@@ -16,7 +16,9 @@ def get_blurb(url, page):
     soup = BeautifulSoup(html, "html.parser")
     blurbs = soup.select('p.project-blurb')
     for blurb in blurbs:
-        blurbs_list.append(blurb.text.encode("utf-8"))
+        result = blurb.text
+        result = result.replace("\n", "")
+        blurbs_list.append(result.encode("utf-8"))
 
 def create_json():
     final_obj["description"] = "some project blurbs from Kickstarter"
@@ -30,5 +32,5 @@ for page in range(1, total_pages):
     print "getting page " + str(page)
     get_blurb(base_url, 0)
     time.sleep(0.5)
-#
+
 create_json()
