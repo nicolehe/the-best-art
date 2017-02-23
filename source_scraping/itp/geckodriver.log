@@ -1,0 +1,20 @@
+1487885380466	Marionette	INFO	Listening on port 49821
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487885451549	Marionette	INFO	Listening on port 49919
+JavaScript error: chrome://marionette/content/listener.js, line 1155: NS_ERROR_MALFORMED_URI: 
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: chrome://browser/content/browser-places.js, line 663: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript error: chrome://browser/content/places/browserPlacesViews.js, line 263: TypeError: this.controller is undefined
+1487885524248	Marionette	INFO	Listening on port 50027
+JavaScript error: resource://gre/components/nsPrompter.js, line 347: NS_ERROR_NOT_AVAILABLE: Cannot call openModalWindow on a hidden window
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487885774242	Marionette	INFO	Listening on port 50169
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487885835458	Marionette	INFO	Listening on port 50239
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487886076351	Marionette	INFO	Listening on port 50431
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487886109515	Marionette	INFO	Listening on port 50492
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487886140706	Marionette	INFO	Listening on port 50544
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
