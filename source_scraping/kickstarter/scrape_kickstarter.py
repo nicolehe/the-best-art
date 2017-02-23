@@ -7,9 +7,10 @@ from bs4 import BeautifulSoup
 
 base_url = "https://www.kickstarter.com/discover/advanced?woe_id=0&sort=magic&seed=2479523&page="
 
+page = 0
 blurbs_list = []
 final_obj = {}
-total_pages = 200
+total_pages = 50
 
 def get_blurb(url, page):
     html = requests.get(url + str(page)).text
@@ -18,6 +19,7 @@ def get_blurb(url, page):
     for blurb in blurbs:
         result = blurb.text
         result = result.replace("\n", "")
+        print result
         blurbs_list.append(result.encode("utf-8"))
 
 def create_json():
@@ -30,7 +32,8 @@ def create_json():
 
 for page in range(1, total_pages):
     print "getting page " + str(page)
-    get_blurb(base_url, 0)
+    get_blurb(base_url, page)
+    page += 1
     time.sleep(0.5)
 
 create_json()
