@@ -57,6 +57,8 @@ if total_pages != 0:
     if total_pages == 1:
         get_title(base_url, 1)
     else:
+        if total_pages > 3:
+            total_pages = 3
         for page in range(1, total_pages):
             get_title(base_url, page)
             time.sleep(0.5)

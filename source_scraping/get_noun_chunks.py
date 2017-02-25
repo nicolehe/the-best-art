@@ -4,9 +4,12 @@ import json
 
 nlp = spacy.load('en')
 
-input_file = sys.argv[1]
-output_file = sys.argv[2]
-desc_string = sys.argv[3]
+input_search = sys.argv[1]
+# output_file = sys.argv[2]
+# desc_string = sys.argv[3]
+input_file = "./patents/data/" + input_search + "_patents.json"
+output_file = "../data/noun_chunks/" + input_search + "_patents_noun_chunks.json"
+desc_string = input_search + " patents noun chunks"
 
 data = json.loads(open(input_file).read())
 
@@ -17,7 +20,6 @@ docs = [ nlp(d) for d in blurbs ]
 nouns = []
 final_obj = {}
 
-# TODO: figure out why it's only printing a part of it
 def get_chunks():
     for doc in docs:
         for chunk in doc.noun_chunks:

@@ -18,3 +18,126 @@ JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/s
 JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
 1487886140706	Marionette	INFO	Listening on port 50544
 JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487886871711	Marionette	INFO	Listening on port 50830
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887329331	Marionette	INFO	Listening on port 51068
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887375367	Marionette	INFO	Listening on port 51136
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887451534	Marionette	INFO	Listening on port 51218
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887471181	Marionette	INFO	Listening on port 51280
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887523864	Marionette	INFO	Listening on port 51358
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887748268	Marionette	INFO	Listening on port 51698
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887922137	Marionette	INFO	Listening on port 51791
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487887966380	Marionette	INFO	Listening on port 51867
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888046221	Marionette	INFO	Listening on port 52136
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888086276	Marionette	INFO	Listening on port 52435
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888327435	Marionette	INFO	Listening on port 52887
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888375411	Marionette	INFO	Listening on port 53301
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888443889	Marionette	INFO	Listening on port 53735
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10343] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10343] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487888486820	Marionette	INFO	Listening on port 54142
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10359] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10359] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487888534241	Marionette	INFO	Listening on port 54554
+[Child 10377] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10377] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487888573730	Marionette	INFO	Listening on port 54945
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10390] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10390] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487888830622	Marionette	INFO	Listening on port 55432
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888863819	Marionette	INFO	Listening on port 55852
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487888887253	Marionette	INFO	Listening on port 56258
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10493] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10493] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487888995573	Marionette	INFO	Listening on port 56677
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10520] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10520] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487889439058	Marionette	INFO	Listening on port 57197
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 10597] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 10597] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487977500272	Marionette	INFO	Listening on port 63657
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 17005] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 17005] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487977795330	Marionette	INFO	Listening on port 64894
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 17077] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 17077] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487977908785	Marionette	INFO	Listening on port 49642
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 17101] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 17101] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487977970993	Marionette	INFO	Listening on port 50905
+[Child 17121] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 17121] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1487978008822	Marionette	INFO	Listening on port 50959
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+1487978862626	Marionette	INFO	Listening on port 57176
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4800B1,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4800B2,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1487979516032	Marionette	INFO	Listening on port 58489
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: String.prototype.contains() is deprecated and will be removed in a future release; use String.prototype.includes() instead
+JavaScript warning: https://f.vimeocdn.com/p/2.52.0/js/player.js, line 13: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 17409] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 17409] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+1488044772705	Marionette	INFO	Listening on port 53069
+JavaScript warning: https://normandy-cloudfront.cdn.mozilla.net/static/bundles/selfrepair-a26c82c370850b1be72d.052381136c5c.js, line 7: mutating the [[Prototype]] of an object will cause your code to run very slowly; instead create the object with the correct initial [[Prototype]] value using Object.create
+[Child 19914] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
+[Child 19914] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2027
