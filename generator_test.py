@@ -34,7 +34,7 @@ def process_noun_chunks(chunk):
             chunk = chunk
         else:
             chunk = "a " + chunk
-    return chunk
+    return chunk.replace("|","").strip()
 
 
 

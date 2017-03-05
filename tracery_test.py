@@ -23,7 +23,7 @@ def get_all_nouns(dir):
 
 
 
-nouns = get_all_nouns("./data/noun_chunks/")
+art_nouns = get_all_nouns("./data/noun_chunks/")
 technical_nouns = get_all_nouns("./data/hashtags/")
 adjs = get_words("./data/corpora/data/words/adjs.json", "adjs")
 adverbs = get_words("./data/corpora/data/words/adverbs.json", "adverbs")
@@ -33,12 +33,19 @@ simple_objects = get_all_nouns("./data/simple_objects/")
 
 verbs_present = [item["present"] for item in verbs_data]
 
+
 rules = {
-    # 'project': ['Using #noun_chunk#, make something that #verb.s# like #noun_chunk#.',
-    #             'Make #noun_chunk# that makes me feel #mood#.',
-    #             'With #noun_chunk# and #technical_noun#, construct something #adjective#.'],
-    'project': ['Create #simple_object#, evoking #noun_chunk#.'],
-    'noun_chunk': nouns,
+    # 'project': ['Using #noun_chunk#, #make# something that #verb.s# like #noun_chunk#.',
+    #             '#make.capitalize# #noun_chunk# that makes me feel #mood#.',
+    #             'With #noun_chunk# and #technical_noun#, #make# something #adjective#.',
+    #              '#make.capitalize# #simple_object#, evoking #noun_chunk#.'  ],
+    'project': ['#make# #any_noun#, evoking #any_noun#.',
+                '#using# #any_noun#, #make# something that #verb.s#.',
+                '#using# #any_noun# and #technical_noun#, #make# something #adjective#.'],
+    'art_noun': art_nouns,
+    'any_noun' : ['#simple_object#', '#technical_noun#', '#art_noun#'],
+    'make': ['make', 'construct', 'produce', 'create', 'build', 'design'],
+    'using': ['using', 'incorporating', 'with'],
     'simple_object': simple_objects,
     'technical_noun' : technical_nouns,
     'verb': verbs_present,
@@ -54,7 +61,7 @@ grammar = tracery.Grammar(rules)
 grammar.add_modifiers(base_english)
 for i in range(50):
     sentence = grammar.flatten("#project#")
-    results.append(sentence)
+    results.append("Human, " + sentence)
 
 tupped = []
 for r in results:
