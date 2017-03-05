@@ -14,6 +14,12 @@ def select_word(path, key):
     else:
         return choice
 
+def get_words(path, key):
+    source = open(path).read()
+    data = json.loads(source)
+    words = data[key]
+    return words
+
 def pick_file(dir):
     jsons = [file for file in os.listdir(dir) if file.endswith(".json")]
     return random.choice(jsons)
@@ -22,7 +28,7 @@ def pick_file(dir):
 # FIXME: jesus
 def process_noun_chunks(chunk):
     if chunk[-1] != "s" or chunk[-2:] == "us" or chunk[-2:] == "as" or chunk[-2:] == "is" or chunk[-2:] == "os":
-        if chunk[0] in ["a", "e", "i", "o", "u"] and chunk[1] not in [" ", "n"]:
+        if chunk[0].lower() in ["a", "e", "i", "o", "u"] and chunk[1] not in [" ", "n"]:
             chunk = "an " + chunk
         elif chunk[:2] == "a " or chunk[:2] == "an" or chunk[:4] == "the ":
             chunk = chunk
@@ -51,7 +57,7 @@ def test2():
     noun_chunk =  select_word("./data/noun_chunks/" + noun_file, "data").lower()
     noun = process_noun_chunks(noun_chunk)
     adj = select_word("./data/corpora/data/words/adjs.json", "adjs")
-    mood = select_word("./data//corpora/data/humans/moods.json", "moods")
+    mood = select_word("./data/corpora/data/humans/moods.json", "moods")
     hashtag = select_word("./data/hashtags/itp_thesis_keywords.json", "data").replace(" ", "")
 
 
