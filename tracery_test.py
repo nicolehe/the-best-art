@@ -2,6 +2,7 @@ import tracery
 from operator import itemgetter
 from tracery.modifiers import base_english
 from generator_test import process_noun_chunks, select_word, pick_file, get_words
+from get_conditions import get_headline_chunks
 import os
 import json
 from textblob import TextBlob
@@ -32,21 +33,19 @@ verbs_data = get_words("./data/corpora/data/words/verbs.json", "verbs")
 simple_objects = get_all_nouns("./data/simple_objects/")
 
 verbs_present = [item["present"] for item in verbs_data]
+headlines = get_headline_chunks()
 
 
 rules = {
-    # 'project': ['Using #noun_chunk#, #make# something that #verb.s# like #noun_chunk#.',
-    #             '#make.capitalize# #noun_chunk# that makes me feel #mood#.',
-    #             'With #noun_chunk# and #technical_noun#, #make# something #adjective#.',
-    #              '#make.capitalize# #simple_object#, evoking #noun_chunk#.'  ],
-    'project': ['#make# #simple_object# #evoking# #any_noun#.',
-                '#make# #art_noun# #evoking# #simple_object#.',
-                "#combine# #art_noun# and #simple_object# to #verb# #adverb#.",
-                '#make# #technical_noun# that feels #mood#.',
-                '#using# #any_noun#, #make# something that #verb.s#.',
-                '#using# #any_noun# and #technical_noun#, #make# something #adjective#.',
-                '#adverb# #combine# #any_noun# and #any_noun#.',
-                '#make# art out of #simple_object# and #technical_noun#.'],
+    # 'project': ['#make# #simple_object# #evoking# #any_noun#.',
+    #             '#make# #art_noun# #evoking# #simple_object#.',
+    #             "#combine# #art_noun# and #simple_object# to #verb# #adverb#.",
+    #             '#make# #technical_noun# that feels #mood#.',
+    #             '#using# #any_noun#, #make# something that #verb.s#.',
+    #             '#using# #any_noun# and #technical_noun#, #make# something #adjective#.',
+    #             '#adverb# #combine# #any_noun# and #any_noun#.',
+    #             '#make# art out of #simple_object# and #technical_noun#.'],
+    'project' : ['#make# #any_noun# #evoking# #headline#.'],
     'art_noun': art_nouns,
     'any_noun' : ['#simple_object#', '#technical_noun#', '#art_noun#'],
     'evoking' : ['that evokes', 'that reminds me of', 'in contrast to', 'in opposition to'],
@@ -54,6 +53,7 @@ rules = {
     'using': ['using', 'incorporating', 'with'],
     'combine': ['blend', 'merge', 'combine', 'conjoin'],
     'simple_object': simple_objects,
+    'headline': headlines,
     'technical_noun' : technical_nouns,
     'verb': verbs_present,
     'adjective' : adjs,

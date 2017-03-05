@@ -18,12 +18,6 @@ def get_title(url):
         titles.append(headline.text)
 
 
-def create_json():
-    final_obj["data"] = titles
-    final_obj["description"] = "US patents that contain the word " + search_term
-    filename = "./data/" + search_term + "_patents.json"
 
-    with open(filename, 'wt') as out:
-        json.dump(final_obj, out, sort_keys=True, indent=4, separators=(',', ': '))
 
 get_title(base_url)
