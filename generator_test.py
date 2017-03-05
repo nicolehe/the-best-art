@@ -25,16 +25,19 @@ def pick_file(dir):
     return random.choice(jsons)
 
 
+dont_add_a = ['phys', 'your', 'data', 'choc']
 # FIXME: jesus
 def process_noun_chunks(chunk):
     if chunk[-1] != "s" or chunk[-2:] == "us" or chunk[-2:] == "as" or chunk[-2:] == "is" or chunk[-2:] == "os":
-        if chunk[0].lower() in ["a", "e", "i", "o", "u"] and chunk[1] not in [" ", "n"]:
+        if chunk[0].lower() in ["a", "e", "i", "o", "u"] and chunk[1] not in [" ", "n"] and chunk[:3] not in ["our"]:
             chunk = "an " + chunk
-        elif chunk[:2] == "a " or chunk[:2] == "an" or chunk[:4] == "the ":
+        elif chunk[:2] == "a " or chunk[:2] == "an" or chunk[:4] == "the " or chunk[:4] in dont_add_a:
             chunk = chunk
         else:
             chunk = "a " + chunk
-    return chunk.replace("|","").strip()
+    elif chunk[-2:] == "ss":
+        chunk = chunk
+    return chunk.replace("|","").replace("\n", "").strip()
 
 
 
