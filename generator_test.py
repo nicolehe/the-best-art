@@ -24,6 +24,19 @@ def pick_file(dir):
     jsons = [file for file in os.listdir(dir) if file.endswith(".json")]
     return random.choice(jsons)
 
+def get_all_nouns(dir):
+    jsons = [file for file in os.listdir(dir) if file.endswith(".json")]
+    unprocessed_nouns = []
+
+    for j in jsons:
+        f = open(dir + j).read()
+        data = json.loads(f)
+        items = data["data"]
+        for item in items:
+            unprocessed_nouns.append(item.lower())
+    processed_nouns = [process_noun_chunks(noun).strip() for noun in unprocessed_nouns]
+    return processed_nouns
+
 
 dont_add_a = ['phys', 'your', 'data', 'choc']
 # FIXME: jesus

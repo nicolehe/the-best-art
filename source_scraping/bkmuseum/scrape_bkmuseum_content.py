@@ -36,11 +36,11 @@ def create_json():
     final_obj["description"] = "brookyln museum open collection artwork titles and descriptions between 1917 and 1965"
     final_obj["data"] = all_artwork
 
-    with open("bkmuseum_titles_old_descs3.json", 'wt') as out:
+    with open("bkmuseum_titles_old_descs7.json", 'wt') as out:
         json.dump(final_obj, out, sort_keys=True, indent=4, separators=(',', ': '))
 
 
-for art_id in ids[6000:8000]:
+for art_id in ids[14000:]:
     print str(ids.index(art_id)) + "/" + str(len(ids))
     scrape(art_id)
 
