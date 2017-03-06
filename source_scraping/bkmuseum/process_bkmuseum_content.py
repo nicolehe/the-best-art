@@ -19,7 +19,7 @@ import time
 f = open("descriptions.txt", 'a+')
 
 
-for i in range(0, 10):
+for i in range(0, 18):
     print i
     file_name = "bkmuseum_titles_descs" + str(i) + ".json"
     source = open(file_name).read()

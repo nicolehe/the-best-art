@@ -1,4 +1,5 @@
 import requests
+import random
 import sys
 import json
 import os
@@ -7,12 +8,10 @@ from operator import itemgetter
 from bs4 import BeautifulSoup
 import pyowm
 from textblob import TextBlob
+from datetime import datetime
 
 import spacy
 nlp = spacy.load('en')
-
-current_headlines = []
-final_obj = {}
 
 
 def get_weather():
@@ -43,6 +42,19 @@ def get_weather():
     status = w.get_detailed_status()
     return weather_rating, status
 
+def get_date():
+    currentTime = datetime.now()
+    date = currentTime.strftime('%I:%M %p, %B %d, %Y')
+    if currentTime.hour < 12:
+        time_of_day = "morning"
+        day = "today"
+    elif 12 <= currentTime.hour < 18:
+        time_of_day = "afternoon"
+        day = "today"
+    else:
+        time_of_day = "evening"
+        day = "tonight"
+    return time_of_day, day, date
 
 
 
@@ -56,7 +68,15 @@ def get_horoscope():
     horoscope = split[1][1:].strip()
     blob = TextBlob(horoscope)
     horoscope_rating = blob.sentiment.polarity
-    return horoscope_rating
+
+    sentences = [sentence.replace("your", "my").replace("you", "me").replace("Gemini", "human") for sentence in blob.sentences]
+    picked_sentence = str(random.choice(sentences))
+
+    return horoscope_rating, picked_sentence
+#     print sentences
+#     print picked_sentence
+# get_horoscope()
+
 
 def count_trump_tweets():
     date = time.strftime("%Y-%m-%d")
@@ -146,12 +166,10 @@ def get_headline_chunks():
     return nouns
 
 def create_index():
-    weather_num, weather_desc = get_weather()
-    horo = get_horoscope()
+    total_index = 0
+    weather_rating, weather_desc = get_weather()
+    horoscope_rating, picked_sentence = get_horoscope()
     tweets = count_trump_tweets()
-    return {
-        "weather" : weather_num,
-        "horoscope" : horo,
-        "trump_tweets" : tweets
-    }
+    todays_rating = (weather_rating + horoscope_rating + tweets) / 3
+    return str(todays_rating)
 # get_headline_chunks()
