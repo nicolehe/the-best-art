@@ -3,6 +3,7 @@ from tracery.modifiers import base_english
 from modules import get_headline_chunks, create_index, process_noun_chunks, select_word, pick_file, get_words, get_all_nouns, get_weather, get_horoscope, get_date
 import os
 import json
+import sys
 import random
 from textblob import TextBlob
 from datetime import datetime
@@ -95,7 +96,7 @@ def generate_assignment():
         'date_now' : date,
         'proj' : final_proj,
         'time': time_of_day,
-        'weather_status' : weather_status,
+        'weather_status' : weather_desc,
         'todays_rating_num' : todays_rating,
         'project_rating_num' : proj_rating,
         'day_now' : day,
@@ -111,16 +112,13 @@ def generate_assignment():
     return res
 
 
-
 if __name__ == "__main__":
-    for i in range(10):
+    for i in range(int(sys.argv[1])):
         headlines = get_headline_chunks()
-        weather_rating, weather_status = get_weather()
-        horoscope_rating, picked_sentence = get_horoscope()
+        weather_rating, weather_desc, horoscope_rating, picked_sentence, tweets, ISS_closeness, todays_rating = create_index()
         if picked_sentence[-1] != "." or picked_sentence[-1] != "!":
             picked_sentence += "."
         time_of_day, day, date = get_date()
-        todays_rating = create_index()
         projects_list = generate_projects()
         final_proj, proj_rating = sort_projects(projects_list, todays_rating)
         assignment = generate_assignment()

@@ -9,9 +9,25 @@ from bs4 import BeautifulSoup
 import pyowm
 from textblob import TextBlob
 from datetime import datetime
+from geopy.distance import vincenty
 
 import spacy
 nlp = spacy.load('en')
+
+def map_val(x, in_min, in_max, out_min, out_max):
+    return float((x-in_min) * (out_max-out_min) / (in_max-in_min) + out_min)
+
+def get_ISS():
+    api = requests.get("http://api.open-notify.org/iss-now.json")
+    data = api.json()
+    iss = (data["iss_position"]["latitude"], data["iss_position"]["longitude"])
+    home = (40.674974, -73.957325)
+    dist = vincenty(iss, home).miles
+    ISS_closeness = map_val(dist, 0.0, 12450.0, -1.0, 1.0)
+    return -1.0 * ISS_closeness
+
+
+
 
 
 def get_weather():
@@ -70,13 +86,10 @@ def get_horoscope():
     horoscope_rating = blob.sentiment.polarity
 
     sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "you " not in sentence.lower()]
-    
+
     picked_sentence = str(random.choice(sentences))
 
     return horoscope_rating, picked_sentence
-#     print sentences
-#     print picked_sentence
-# get_horoscope()
 
 
 def count_trump_tweets():
@@ -96,7 +109,7 @@ def count_trump_tweets():
     elif tweet_num < 8 and tweet_num >= 4:
         trump_tweet_rating = -0.25
     elif tweet_num < 4 and tweet_num >= 1:
-        trump_tweet_rating = 0
+        trump_tweet_rating = 0.0
     elif tweet_num == 0:
         trump_tweet_rating = 0.6
     return trump_tweet_rating
@@ -168,9 +181,10 @@ def get_headline_chunks():
 
 
 def create_index():
-    total_index = 0
+    total_index = 0.0
+    ISS_closeness = get_ISS()
     weather_rating, weather_desc = get_weather()
     horoscope_rating, picked_sentence = get_horoscope()
     tweets = count_trump_tweets()
-    todays_rating = (weather_rating + horoscope_rating + tweets) / 3
-    return str(todays_rating)
+    todays_rating = (weather_rating + horoscope_rating + tweets + ISS_closeness) / 4
+    return str(weather_rating), str(weather_desc), str(horoscope_rating), str(picked_sentence), str(tweets), str(ISS_closeness), str(todays_rating)
