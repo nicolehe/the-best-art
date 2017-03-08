@@ -24,15 +24,15 @@ def get_weather():
     snow = w.get_snow()
 
     if temp <= 33 or temp >= 90:
-        weather_rating = -0.5
+        weather_rating = -0.6
     elif temp > 33 and temp <= 45 or temp < 90 and temp >= 80:
-        weather_rating = -0.25
+        weather_rating = -0.3
     elif temp > 45 and temp <= 55:
         weather_rating = 0
     elif temp > 55 and temp <= 65:
-        weather_rating = 0.25
+        weather_rating = 0.3
     elif temp > 65 and temp <= 80:
-        weather_rating = 0.5
+        weather_rating = 0.6
 
     if not rain or not snow:
         weather_rating = weather_rating
@@ -45,7 +45,7 @@ def get_weather():
 def get_date():
     currentTime = datetime.now()
     date = currentTime.strftime('%I:%M %p, %B %d, %Y')
-    if currentTime.hour < 12:
+    if 4 <= currentTime.hour < 12:
         time_of_day = "morning"
         day = "today"
     elif 12 <= currentTime.hour < 18:
@@ -69,7 +69,8 @@ def get_horoscope():
     blob = TextBlob(horoscope)
     horoscope_rating = blob.sentiment.polarity
 
-    sentences = [sentence.replace("your", "my").replace("you", "me").replace("Gemini", "human") for sentence in blob.sentences]
+    sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "you " not in sentence.lower()]
+    
     picked_sentence = str(random.choice(sentences))
 
     return horoscope_rating, picked_sentence
@@ -97,7 +98,7 @@ def count_trump_tweets():
     elif tweet_num < 4 and tweet_num >= 1:
         trump_tweet_rating = 0
     elif tweet_num == 0:
-        trump_tweet_rating = 0.5
+        trump_tweet_rating = 0.6
     return trump_tweet_rating
 
 def get_all_nouns(dir):
@@ -165,6 +166,7 @@ def get_headline_chunks():
                 nouns.append(chunk.text)
     return nouns
 
+
 def create_index():
     total_index = 0
     weather_rating, weather_desc = get_weather()
@@ -172,4 +174,3 @@ def create_index():
     tweets = count_trump_tweets()
     todays_rating = (weather_rating + horoscope_rating + tweets) / 3
     return str(todays_rating)
-# get_headline_chunks()
