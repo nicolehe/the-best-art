@@ -4,12 +4,15 @@ from modules import get_headline_chunks, create_index, process_noun_chunks, sele
 import os
 import json
 import sys
+import time
 import random
 from textblob import TextBlob
 from datetime import datetime
+import socket
 
 from spacy.en import English
 parser = English()
+
 
 art_nouns = get_all_nouns("./data/noun_chunks/")
 technical_nouns = get_all_nouns("./data/hashtags/")
@@ -21,8 +24,8 @@ simple_objects = get_all_nouns("./data/simple_objects/")
 verbs_present = [item["present"] for item in verbs_data]
 
 
-
 def generate_projects():
+    headlines = get_headline_chunks()
     projects = {
         'project': [
             '#make# #simple_object# #about# #art_noun#.',
@@ -66,60 +69,73 @@ def generate_projects():
 
     return generated_projects
 
+
 def sort_projects(projects_list, todays_rating):
     tupped = []
     for r in projects_list:
         blob = TextBlob(r)
         tup = (r, blob.sentiment.polarity)
         tupped.append(tup)
-    final_proj = min(tupped, key=lambda x: abs(float(x[1]) - float(todays_rating)))[0]
-    proj_rating_raw = min(tupped, key=lambda x: abs(float(x[1]) - float(todays_rating)))[1]
+    final_proj = min(tupped, key=lambda x: abs(
+        float(x[1]) - float(todays_rating)))[0]
+    proj_rating_raw = min(tupped, key=lambda x: abs(
+        float(x[1]) - float(todays_rating)))[1]
     proj_rating = str(proj_rating_raw)
     return final_proj, proj_rating
 
 
-
-def generate_assignment():
+def generate_message():
+    timestamp = int(time.time())
+    weather_rating, weather_desc, horoscope_rating, picked_sentence, tweets, ISS_closeness, todays_rating = create_index()
+    time_of_day, day, date = get_date()
+    projects_list = generate_projects()
+    final_proj, proj_rating = sort_projects(projects_list, todays_rating)
     convo = {
-        'greeting' : [
-            "#border#\n\n#date_now# \n\nGood #time#, human, #phrase# \n#art_index#\n\n#execute.capitalize# the following: \n\n///// #proj.capitalize# ///// \n\n"
-                ],
+        'greeting': [
+            "#date_now##border#Good #time#, human, #phrase##border##art_index##border##execute.capitalize# the following:#border##title#: #proj.capitalize##border#"
+        ],
         'art_index': [
             "Given the current Art Index of #todays_rating_num#, I have #calculated# the best art for #moment#, with an Art Index of #project_rating_num#.",
-            "I have #calculated# the best art for #moment#. Today's Art Index is #todays_rating_num#, and this project has an Art Index of #project_rating_num#."
-                ],
-        'calculated' : ['computed', 'calculated', 'determined'],
-        'moment' : ['this moment in time', 'the current state of the world'],
-        'day' : day,
-        'border' : [ '*****************************'],
-        'execute' : ['execute', 'implement'],
-        'date_now' : date,
-        'proj' : final_proj,
+            "#variable# has #impacted# the the current Art Index, totalling #todays_rating_num#. I have #calculated# the best art for #moment#, with a rating of #project_rating_num#.",
+            "I have #calculated# the best art for #moment#. Today's Art Index is #todays_rating_num#, and this project has a very close rating of #project_rating_num#.",
+
+        ],
+        'math': ["\nWeather: #weather_rating#\nHoroscope: #horoscope_rating#\nTrump Rating: #trump_rating#\nHow Close the ISS Is: #ISS_rating#"],
+        'calculated': ['computed', 'calculated', 'determined'],
+        'impacted' : ['impacted', 'affected'],
+        'moment': ['this moment in time', 'the current state of the world'],
+        'day': day,
+        'variable' : [
+            "The current Trump Tweet rating of #trump_rating#",
+            "How close the International Space Station currently is (rating #ISS_rating#)",
+            "My current horoscope, which I have rated #horoscope_rating#,"
+        ],
+        'title' : str(timestamp),
+        'border': ['$$$$'],
+        'execute': ['execute', 'implement'],
+        'date_now': date,
+        'proj': final_proj,
         'time': time_of_day,
-        'weather_status' : weather_desc,
-        'todays_rating_num' : todays_rating,
-        'project_rating_num' : proj_rating,
-        'day_now' : day,
-        'horo' : picked_sentence.lower(),
-        'phrase' : ['#weather_status# #day#.', '#horo#']
+        'weather_status': weather_desc,
+        'weather_rating': float(weather_rating),
+        'horoscope_rating': horoscope_rating,
+        'trump_rating': tweets,
+        'ISS_rating': ISS_closeness,
+        'todays_rating_num': todays_rating,
+        'project_rating_num': proj_rating,
+        'day_now': day,
+        'horo': picked_sentence.lower(),
+        'phrase': ['#weather_status# #day#.', '#horo#']
     }
 
     convo_grammar = tracery.Grammar(convo)
     convo_grammar.add_modifiers(base_english)
-    res = convo_grammar.flatten("#greeting#")
+    message = convo_grammar.flatten("#greeting#")
+
+    return message
 
 
-    return res
 
 
 if __name__ == "__main__":
-    for i in range(int(sys.argv[1])):
-        headlines = get_headline_chunks()
-        weather_rating, weather_desc, horoscope_rating, picked_sentence, tweets, ISS_closeness, todays_rating = create_index()
-        if picked_sentence[-1] != "." or picked_sentence[-1] != "!":
-            picked_sentence += "."
-        time_of_day, day, date = get_date()
-        projects_list = generate_projects()
-        final_proj, proj_rating = sort_projects(projects_list, todays_rating)
-        assignment = generate_assignment()
-        print assignment
+    generate_message()

@@ -27,9 +27,6 @@ def get_ISS():
     return -1.0 * ISS_closeness
 
 
-
-
-
 def get_weather():
     owm = pyowm.OWM('e5bbd595ccad62117e1da86f24394b2c')
     observation = owm.weather_at_place('New York, NY')
