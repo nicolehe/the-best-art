@@ -84,7 +84,7 @@ def sort_projects(projects_list, todays_rating):
     return final_proj, proj_rating
 
 
-def generate_message():
+def generate_message(border):
     timestamp = int(time.time())
     weather_rating, weather_desc, horoscope_rating, picked_sentence, tweets, ISS_closeness, todays_rating = create_index()
     time_of_day, day, date = get_date()
@@ -95,8 +95,8 @@ def generate_message():
             "#date_now##border#Good #time#, human, #phrase##border##art_index##border##execute.capitalize# the following:#border##title#: #proj.capitalize##border#"
         ],
         'art_index': [
-            "Given the current Art Index of #todays_rating_num#, I have #calculated# the best art for #moment#, with an Art Index of #project_rating_num#.",
-            "#variable# has #impacted# the the current Art Index, totalling #todays_rating_num#. I have #calculated# the best art for #moment#, with a rating of #project_rating_num#.",
+            "Given the current Art Index of #todays_rating_num#, I have #calculated# the best art for #moment#, with a rating of #project_rating_num#.",
+            "#variable# has #impacted# the current Art Index, totalling #todays_rating_num#. I have #calculated# the best art for #moment#, with a rating of #project_rating_num#.",
             "I have #calculated# the best art for #moment#. Today's Art Index is #todays_rating_num#, and this project has a very close rating of #project_rating_num#.",
 
         ],
@@ -107,11 +107,11 @@ def generate_message():
         'day': day,
         'variable' : [
             "The current Trump Tweet rating of #trump_rating#",
-            "How close the International Space Station currently is (rating #ISS_rating#)",
+            "The current proximity of the International Space Station is (rating #ISS_rating#)",
             "My current horoscope, which I have rated #horoscope_rating#,"
         ],
         'title' : str(timestamp),
-        'border': ['$$$$'],
+        'border': [border],
         'execute': ['execute', 'implement'],
         'date_now': date,
         'proj': final_proj,
@@ -138,4 +138,11 @@ def generate_message():
 
 
 if __name__ == "__main__":
-    generate_message()
+    open("to_print.txt", 'w').close()
+    for i in range(int(sys.argv[1])):
+        message = generate_message("$$$$")
+        print message.replace("$$$$", "\n\n")
+        with open("to_print.txt", "a") as f:
+            f.write(message)
+            f.write("***")
+            print "***"

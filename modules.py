@@ -85,10 +85,14 @@ def get_horoscope():
     sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "you " not in sentence.lower()]
 
     picked_sentence = str(random.choice(sentences))
+    # print picked_sentence
+    # if "." not in picked_sentence or "?" not in picked_sentence or "!" not in picked_sentence:
+    #     picked_sentence = picked_sentence + "."
+    # print picked_sentence
 
     return horoscope_rating, picked_sentence
 
-
+get_horoscope()
 def count_trump_tweets():
     date = time.strftime("%Y-%m-%d")
     url = "https://twitter.com/search?l=&q=from%3Arealdonaldtrump%20since%3A"+ str(date)

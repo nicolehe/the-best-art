@@ -1,3 +1,5 @@
 venv
-login.txt
 *.pyc
+old
+*.txt
+works
