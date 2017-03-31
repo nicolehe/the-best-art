@@ -17,16 +17,9 @@ raw = open("to_print.txt", "r").read()
 messages = raw.split("***")
 
 for message in messages:
-    # # message = the_best_art.generate_message("$$$$")
-    # strs = ["05:52 PM, March 25, 2017",
-    #            "Good afternoon, human, moderate rain today.",
-    #            "I have calculated the best art for the current state of the world. Today's Art Index is 0.0194890717792, and this project has a very close rating of 0.0166666666667.",
-    #            "Execute the following:",
-    #            "1490478746: Create a carrot that evokes larger social issues.", ""]
-
-
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
+    sock.sendall("")
     time.sleep(3)
 
 

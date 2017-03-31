@@ -107,7 +107,7 @@ def generate_message(border):
         'day': day,
         'variable' : [
             "The current Trump Tweet rating of #trump_rating#",
-            "The current proximity of the International Space Station is (rating #ISS_rating#)",
+            "The current proximity of the International Space Station (rating #ISS_rating#)",
             "My current horoscope, which I have rated #horoscope_rating#,"
         ],
         'title' : str(timestamp),
@@ -133,8 +133,6 @@ def generate_message(border):
     message = convo_grammar.flatten("#greeting#")
 
     return message
-
-
 
 
 if __name__ == "__main__":
