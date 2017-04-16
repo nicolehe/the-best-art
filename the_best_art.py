@@ -138,7 +138,7 @@ def generate_message(border):
 if __name__ == "__main__":
     open("to_print.txt", 'w').close()
     for i in range(int(sys.argv[1])):
-        message = generate_message("$$$$")
+        message = generate_message("$$$$").encode('utf-8')
         print message.replace("$$$$", "\n\n")
         with open("to_print.txt", "a") as f:
             f.write(message)

@@ -69,8 +69,6 @@ def get_date():
         day = "tonight"
     return time_of_day, day, date
 
-
-
 def get_horoscope():
     html = requests.get("http://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign=3").text
     time.sleep(1)
@@ -82,17 +80,11 @@ def get_horoscope():
     blob = TextBlob(horoscope)
     horoscope_rating = blob.sentiment.polarity
 
-    sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "you " not in sentence.lower()]
-
+    sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "free psychic" not in sentence.lower() and len(sentence) > 2]
     picked_sentence = str(random.choice(sentences))
-    # print picked_sentence
-    # if "." not in picked_sentence or "?" not in picked_sentence or "!" not in picked_sentence:
-    #     picked_sentence = picked_sentence + "."
-    # print picked_sentence
-
     return horoscope_rating, picked_sentence
 
-get_horoscope()
+
 def count_trump_tweets():
     date = time.strftime("%Y-%m-%d")
     url = "https://twitter.com/search?l=&q=from%3Arealdonaldtrump%20since%3A"+ str(date)
