@@ -3,3 +3,4 @@ venv
 old
 *.txt
 data
+!requirements.txt
