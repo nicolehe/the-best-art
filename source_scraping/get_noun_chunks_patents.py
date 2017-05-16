@@ -23,7 +23,7 @@ final_obj = {}
 def get_chunks():
     for doc in docs:
         for chunk in doc.noun_chunks:
-            if len(chunk) > 3:
+            if len(chunk) > 0:
                 print chunk
                 nouns.append(chunk.text)
 

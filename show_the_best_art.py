@@ -1,4 +1,6 @@
 import tracery
+import print_instructions
+from pyfiglet import Figlet
 from tracery.modifiers import base_english
 from modules import get_headline_chunks, create_index, process_noun_chunks, select_word, pick_file, get_words, get_all_nouns, get_weather, get_horoscope, get_date
 import os
@@ -11,7 +13,7 @@ from datetime import datetime
 
 from spacy.en import English
 parser = English()
-
+figlet = Figlet()
 
 art_nouns = get_all_nouns("./data/noun_chunks/")
 technical_nouns = get_all_nouns("./data/hashtags/")
@@ -84,7 +86,7 @@ def sort_projects(projects_list, todays_rating):
     return final_proj, proj_rating
 
 
-def generate_message(border):
+def generate_message(border, name):
     timestamp = int(time.time())
     weather_rating, weather_desc, horoscope_rating, picked_sentence, tweets, ISS_closeness, todays_rating = create_index()
     time_of_day, day, date = get_date()
@@ -92,7 +94,7 @@ def generate_message(border):
     final_proj, proj_rating = sort_projects(projects_list, todays_rating)
     convo = {
         'greeting': [
-            "#date_now##border#Good #time#, human, #phrase##border##art_index##border##execute.capitalize# the following:#border##title#: #proj.capitalize##border#"
+            "#date_now##border#Good #time#, human #name#, #phrase##border##art_index##border##execute.capitalize# the following:#border##title#: #proj.capitalize##border#"
         ],
         'art_index': [
             "Given the current Art Index of #todays_rating_num#, I have #calculated# the best art for #moment#, with a rating of #project_rating_num#.",
@@ -111,6 +113,7 @@ def generate_message(border):
             "My current horoscope, which I have rated #horoscope_rating#,"
         ],
         'title' : str(timestamp),
+        'name' : name,
         'border': [border],
         'execute': ['execute', 'implement'],
         'date_now': date,
@@ -134,13 +137,23 @@ def generate_message(border):
 
     return message
 
+def run_program():
+    name = raw_input(figlet.renderText("Human, what is your name?\n\n") + "> ")
+    name = name.lower().title()
+    print figlet.renderText("Thank you " + name + ". Calculating and printing the best art for you...")
+    open("to_print.txt", 'w').close()
+    message = generate_message("$$$$", name).encode('utf-8')
+    # print message.replace("$$$$", "\n\n")
+    # print "Calculating..."
+    with open("to_print.txt", "a") as f:
+        f.write(message)
+        f.write("***")
+        print "***"
+    print_instructions.send_to_print()
+    print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    run_program()
+
+
 
 if __name__ == "__main__":
-    open("to_print.txt", 'w').close()
-    for i in range(int(sys.argv[1])):
-        message = generate_message("$$$$").encode('utf-8')
-        print message.replace("$$$$", "\n\n")
-        with open("to_print.txt", "a") as f:
-            f.write(message)
-            f.write("***")
-            print "***"
+    run_program()

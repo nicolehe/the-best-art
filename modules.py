@@ -75,7 +75,7 @@ def get_horoscope():
     soup = BeautifulSoup(html, "html.parser")
     div = soup.select("div.horoscope-content")
     raw = div[0].text
-    split = raw.split("-")
+    split = raw.split(" -")
     horoscope = split[1][1:].strip()
     blob = TextBlob(horoscope)
     horoscope_rating = blob.sentiment.polarity
@@ -83,7 +83,6 @@ def get_horoscope():
     sentences = [sentence.replace("your", "my").replace("Gemini", "human") for sentence in blob.sentences if "free psychic" not in sentence.lower() and len(sentence) > 2]
     picked_sentence = str(random.choice(sentences))
     return horoscope_rating, picked_sentence
-
 
 def count_trump_tweets():
     date = time.strftime("%Y-%m-%d")
